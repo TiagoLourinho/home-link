@@ -19,7 +19,7 @@ async def poll_temperature():
         node = client.get_node(NODE_ID)
         while True:
             latest_temp = await node.read_value()
-            print(f"Temperature received in python monitor: {latest_temp}")
+            print(f"Temperature received in python monitor: {latest_temp} °C")
             await asyncio.sleep(1)
 
 
