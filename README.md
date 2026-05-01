@@ -13,7 +13,7 @@ displays a live plot of the temperature over time.
 
 ## Demo
 
-![Demo](assets/homelink_architecture.svg)
+![Demo](assets/demo.gif)
 
 This demo shows the full pipeline running end to end:
 
