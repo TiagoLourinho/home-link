@@ -17,3 +17,39 @@ displays a live plot of the temperature over time.
 | Virtual bus | Linux `vcan` kernel module            |
 | Bridge      | C++, `socketcan`, `open62541`         |
 | Live plot   | Python, `opcua-asyncio`, `matplotlib` |
+
+## Requirements / Environment
+
+- Linux with `vcan` kernel module
+- Python 3.12.3
+- CMake and a C++ compiler
+
+## Setup
+
+### Virtual CAN bus
+
+Run once after every reboot:
+
+```bash
+sudo modprobe vcan
+sudo ip link add dev vcan0 type vcan
+sudo ip link set up vcan0
+```
+
+### Python environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Running
+
+Components must be started in this order.
+
+1. Start the mock temperature sensor: `python3 sensor/temp_sensor.py`
+
+2. Start the C++ bridge: `./build/casalink_bridge`
+
+3. Start the live plot: `python3 tools/live_plot.py`
