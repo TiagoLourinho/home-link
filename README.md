@@ -48,8 +48,6 @@ pip install -r requirements.txt
 
 Components must be started in this order.
 
-1. Start the mock temperature sensor: `python3 sensor/temp_sensor.py`
-
+1. Start the mock temperature sensor: `python src/temp_sensor.py`
 2. Start the C++ bridge: `./build/casalink_bridge`
-
-3. Start the live plot: `python3 tools/live_plot.py`
+3. Start the live plot: `python src/live_plot.py`
