@@ -1,10 +1,10 @@
 # home-link
 
-Simulated home sensors communicating over CANopen and OPC-UA, with a C++ bridge and Python tooling on Linux
+Simulated home sensors communicating over CANopen and OPC-UA, with a C++ bridge and Python tooling on Linux.
 
 ## Architecture
 
-![Architecture diagram](casalink_architecture.svg)
+![Architecture diagram](homelink_architecture.svg)
 
 A temperature sensor is simulated as a CANopen node broadcasting data over a
 virtual CAN bus (`vcan0`). A C++ bridge service reads those frames and exposes
@@ -21,8 +21,10 @@ displays a live plot of the temperature over time.
 ## Requirements / Environment
 
 - Linux with `vcan` kernel module
-- Python 3.12.3
-- CMake and a C++ compiler
+- Python 3.12+
+- CMake
+- [open62541](https://github.com/open62541/open62541)
+- socketcan (Linux kernel, no install needed)
 
 ## Setup
 
@@ -44,10 +46,18 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### C++ bridge
+
+```bash
+mkdir build && cd build
+cmake ..
+make
+```
+
 ## Running
 
 Components must be started in this order.
 
-1. Start the mock temperature sensor: `python src/temp_sensor.py`
-2. Start the C++ bridge: `./build/casalink_bridge`
+1. Start the mock temperature sensor: `python src/sensor_mocks/temp_sensor.py`
+2. Start the C++ bridge: `./build/homelink_bridge`
 3. Start the live plot: `python src/live_plot.py`

@@ -9,7 +9,7 @@ ModificationDate=05-01-2026
 ModificationTime=00:00AM
 
 [DeviceInfo]
-VendorName=casalink
+VendorName=homelink
 ProductName=TempSensor
 SimpleBootUpMaster=0
 SimpleBootUpSlave=1
