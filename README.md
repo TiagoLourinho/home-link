@@ -7,7 +7,7 @@ Simulated home sensors communicating over CANopen and OPC-UA, with a C++ bridge 
 ![Architecture diagram](images/homelink_architecture.svg)
 
 A temperature sensor is simulated as a CANopen node broadcasting data over a
-virtual CAN bus (`vcan0`). A C++ bridge service reads those frames and exposes
+virtual CAN bus. A C++ bridge service reads those frames and exposes
 the values as OPC-UA nodes. A Python client connects to the OPC-UA server and
 displays a live plot of the temperature over time.
 
