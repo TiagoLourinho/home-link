@@ -2,7 +2,7 @@ import time
 import math
 import canopen
 
-OD = "src/temp_sensor.eds"
+OD = "src/sensor_mocks/temp_sensor.eds"
 NODE_ID = 1
 PARAMETER_NAME = "Temperature Value"
 
