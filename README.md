@@ -17,7 +17,6 @@ displays a live plot of the temperature over time.
 - Python 3.12+
 - CMake
 - [open62541](https://github.com/open62541/open62541)
-- socketcan (Linux kernel, no install needed)
 
 ## Setup
 
