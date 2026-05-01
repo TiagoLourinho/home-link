@@ -8,4 +8,4 @@ find_package(open62541 REQUIRED)
 
 add_executable(homelink_bridge src/bridge/main.cpp)
 
-target_link_libraries(homelink_bridge PRIVATE open62541::open62541)
+target_link_libraries(homelink_bridge PRIVATE open62541::open62541 pthread)

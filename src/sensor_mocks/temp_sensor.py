@@ -28,7 +28,7 @@ def main():
             node.sdo[PARAMETER_NAME].raw = raw  # type: ignore (done to keep the OD consistent)
             network.send_message(0x180 + NODE_ID, data)
 
-            print(f"Sent temperature: {temperature:.1f} °C")
+            print(f"Temperature sent from sensor: {temperature:.1f} °C")
             t += 0.1
             time.sleep(1)
     except KeyboardInterrupt:
