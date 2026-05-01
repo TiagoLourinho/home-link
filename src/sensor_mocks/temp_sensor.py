@@ -19,7 +19,7 @@ def main():
     t = 0
     try:
         while True:
-            temperature = 22.0 + 4.0 + math.sin(t)
+            temperature = 22.0 + 4.0 + (5.0 * math.sin(t))
 
             # Encode as integer (multiply by 10 to keep 1 decimal of precision)
             raw = int(temperature * 10)
